@@ -37,11 +37,11 @@ class ob2{
 		
 		int x= 0;
 		Integer sum =0;
-		while(x < ea) {
-			sum += (int)this.al2.get(1)[x]; 
+		while(x < ea) { // 데이터 갯수만큼 반복
+			sum += (int)this.al2.get(1)[x]; // 전체 금액 모두 더함 
 			x++;
 		}
-		System.out.println(sum);
+//		System.out.println(sum);
 		System.out.println(sum/ea);
 	}
 }
