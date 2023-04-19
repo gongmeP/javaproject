@@ -26,6 +26,7 @@ public class Object2 {
 		
 		//복합적 Object 배열
 		Object userinfo[] = {"hong",25,"서울","010123456789",5000};
+		System.out.println(Arrays.toString(userinfo));
 		
 	}
 
