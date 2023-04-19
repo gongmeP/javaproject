@@ -33,7 +33,6 @@ class loads {
 			InputStream is = new FileInputStream(f);
 			System.out.println(is.read());
 
-
 			if (is.available() > 1048576) {
 				System.out.println("이미지 제한 용량은 1MB 이하 까지 입니다.");
 
@@ -44,8 +43,8 @@ class loads {
 				OutputStream os = new FileOutputStream("E:\\memo\\copys1.jpg");
 				
 				os.write(img1,0,bs.available());
+				
 				System.out.println("첨부파일 업로드가 완료되었습니다");
-
 			}
 		} catch (Exception e) {
 
