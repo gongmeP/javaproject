@@ -41,11 +41,13 @@ class crowling2{
 		URLConnection con = this.urls.openConnection(); // 저장된 url주소 연결
 		this.is = this.urls.openStream(); // 저장된 url 주소 파일 오픈
 		
+		//BufferedInputStream 적용 후 byte번환
 		this.bs = new BufferedInputStream(this.is);
 		byte[] code = new byte[1024];
 		FileOutputStream fs = new FileOutputStream("E:\\memo\\test.html");
 		int z=0;
 		while((z=this.bs.read(code))!=-1) {
+			//int 형태로 write
 			fs.write(code,0,z);
 		}
 		this.bs.close();
