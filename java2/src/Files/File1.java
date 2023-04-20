@@ -22,6 +22,7 @@ public class File1 {
 	public static void main(String[] args) throws IOException {
 		FileReader fr = new FileReader("E:\\git_java\\javaproject\\java2\\src\\Files\\message.txt");
 		System.out.println(fr);
+		System.out.println(fr.read());
 
 		while(true) {
 			int m = fr.read();
