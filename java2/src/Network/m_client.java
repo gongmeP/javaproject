@@ -38,25 +38,28 @@ class m_chat{
 	
 	public m_chat(String id) {
 		try {
+			this.outs = this.so.getOutputStream();
 			this.msg = "WELCOME  " + id;
+			this.outs.write(this.msg.getBytes());
+			this.outs.flush();
 			
 			while(true) {
 				this.so = new Socket(this.ip,this.port);
 				this.ins = this.so.getInputStream();
-				this.outs = this.so.getOutputStream();
-//				this.outs.write(this.msg.getBytes());
-//				this.outs.flush();
+//
+//				byte data[] = new byte[1024];
+//				int n = this.ins.read(data);
+//				this.msg = new String(data,0,n);
+//				System.out.println(this.msg);
 
+				
 				this.sc = new Scanner(System.in);
 				System.out.println("chat : ");
 				this.msg = this.sc.nextLine();
 				this.outs.write(this.msg.getBytes());
 				this.outs.flush();
-				
-				byte data[] = new byte[4096];
-				int n = this.ins.read(data);
-				this.msg = new String(data,0,n);
-				System.out.println(this.msg);
+					
+
 			}
 			
 			

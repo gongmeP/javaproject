@@ -27,7 +27,7 @@ class chatroom{
 	public chatroom() {
 		try {
 			this.sk = new ServerSocket(this.port);
-			System.out.println("***Chating***");
+			System.out.println("***push room***");
 			while(true) {
 				this.so = this.sk.accept();//클라 접속 허가
 				
@@ -75,8 +75,14 @@ class chat_thread extends Thread{
 				System.out.println(this.msg);
 //				this.sc = new Scanner(System.in);
 //				System.out.println("message : ");
-				String result = this.msg;
+				
+				this.sc = new Scanner(System.in);
+				System.out.println("message : ");
+				String result = this.sc.nextLine();
+//				String result = this.msg;
 				//한명이 입력한 내용을 접속한 모든 사용자에게 메세지를 전달하기 위함
+				
+				
 				int f;
 				for(f=0; f<this.user.size(); f++) {
 					this.outs = this.user.get(f).getOutputStream();
